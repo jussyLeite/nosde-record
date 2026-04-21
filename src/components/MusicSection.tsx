@@ -6,11 +6,16 @@ import artist2  from "../assets/images/music2.jpeg"
 export default function MusicSection() {
   const musics = [
     { name: "Lil Musa", image: disk },
-    { name: "Cage Cpt", image: artist2 }
+    { name: "Cage Cpt", image: artist2 },
+    { name: "Cage Cpt", image: artist2 },
+    { name: "Cage Cpt", image: artist2 },
+    { name: "Lil Musa", image: disk },
+    { name: "Cage Cpt", image: artist2 },
+    
   ];
 
   return (
-    <div className="container">
+    <div id="music" className="container">
       <h2 className="section-title">Músicas Populares</h2>
       <div className="grid grid-4">
         {musics.map((m, i) => (
