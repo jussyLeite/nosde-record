@@ -66,3 +66,22 @@
 .dot.active {
   background: white;
 }
+
+.demo  {
+  background:  transparent;
+  padding: 40px;
+}
+
+form  {
+  
+    display: flex;
+    flex-direction: column;
+}
+
+input,textarea{
+  margin-bottom: 10px;
+}
+
+.titleDemo{
+  margin: 6px;
+}

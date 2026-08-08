@@ -1,27 +1,31 @@
-import { useState } from 'react'
-import Navbar from './components/NavBar'
-import Hero from './components/Hero'
-import MusicSection from './components/MusicSection'
-import ArtistsSection from './components/ArtistsSection'
-import NewsSidebar from './components/NewsSidebar'
-import DemoForm from './components/DemoForm'
+// src/App.tsx
+import { useState } from "react";
+import DashboardPage from "./features/dashboard/DashboardPage";
+import LoginPage from "./features/auth/LoginPage";
+import { AuthProvider } from "./context/AuthContext";
+import AppRoutes from "./routes/AppRoutes";
 
-function App() {
+export default function App() {
+  // O usuário começa deslogado, vendo o site publicamente
+  const [view, setView] = useState<"dashboard" | "login">("dashboard");
 
-  return<div>
-      <Navbar />
-      <Hero />
+  const handleNavigateToLogin = () => setView("login");
+  const handleNavigateToDashboard = () => setView("dashboard");
 
-      <div className="container main-layout">
-        <div>
-          <MusicSection />
-          <ArtistsSection />
-        </div>
-        <NewsSidebar />
-      </div>
+  return  <AppRoutes/>
+    
+      {/*<div className="app-container">
+      {view === "dashboard" ? (
+        <DashboardPage onNavigateToLogin={handleNavigateToLogin} />
+      ) : (
+        <AuthProvider><LoginPage onBackToDashboard={handleNavigateToDashboard} /></AuthProvider>
+        
+      )}
+    </div> */} 
+    
+   
 
-      <DemoForm />
-    </div>
+    
+    
+  
 }
-
-export default App

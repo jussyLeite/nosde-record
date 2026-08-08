@@ -2,6 +2,7 @@
 import "./navbar.css";
 import logoImage from  "../assets/images/logo2.png";
 import { Link } from "react-router-dom";
+import Login from "../pages/Login";
 
 export default function Navbar() {
   return (
@@ -12,10 +13,12 @@ export default function Navbar() {
         <a href="#music" >Músicas</a>
         <a href="#">Artistas</a>
         <a href="#">Notícias</a>
+        <a href="/Login">Iniciar sessao</a>
+        <Link to={Login} >In</Link>
+
       </div>
       <div>
            <button className="btn btn-secondary">Submeter Demo</button>
-          
       </div>
      
     </div>

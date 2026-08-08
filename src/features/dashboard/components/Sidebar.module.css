@@ -1,0 +1,122 @@
+/* src/features/dashboard/components/Sidebar.module.css */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 100%;
+}
+
+.navBlock {
+  background-color: var(--spotify-dark-gray);
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-weight: bold;
+  color: var(--spotify-text-muted);
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.navItemActive {
+  composes: navItem;
+  color: white;
+}
+
+.navItem:hover {
+  color: white;
+}
+
+.libraryBlock {
+  flex: 1;
+  background-color: var(--spotify-dark-gray);
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.libraryHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--spotify-text-muted);
+  padding: 0 8px;
+  font-weight: bold;
+}
+
+.libraryTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.libraryTitle:hover {
+  color: white;
+}
+
+.plusBtn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.plusBtn:hover {
+  background-color: #1f1f1f;
+}
+
+.cardInfo {
+  background-color: var(--spotify-sidebar-card);
+  padding: 16px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cardTitle {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: white;
+}
+
+.cardSubtitle {
+  font-size: 0.75rem;
+  color: var(--spotify-text-muted);
+}
+
+.actionBtn {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  font-size: 0.75rem;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 50px;
+  width: max-content;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.actionBtn:hover {
+  transform: scale(1.05);
+}

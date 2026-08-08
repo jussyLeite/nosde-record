@@ -1,0 +1,217 @@
+/* src/features/dashboard/components/DemoForm.module.css */
+.demoSection {
+  width: 100%;
+  padding: 60px 24px;
+  background: var(--nosde-gradient), var(--spotify-black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr; /* Divide o form e os contactos proporcionalmente */
+  gap: 64px;
+}
+
+.formWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.titleDemo {
+  font-size: 2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: white;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.inputGroup {
+  width: 100%;
+}
+
+.input, .textarea, .uploadButton {
+  width: 100%;
+  background-color: rgba(45, 5, 5, 0.5); /* Vermelho muito escuro translúcido */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 14px 18px;
+  border-radius: 6px;
+  color: white;
+  font-size: 0.9rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.input::placeholder, .textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.input:focus, .textarea:focus {
+  border-color: var(--spotify-green); /* Destaca com a cor ativa */
+  background-color: rgba(90, 10, 10, 0.6);
+}
+
+.textarea {
+  resize: none;
+}
+
+/* Esconder o input file nativo do browser */
+.hiddenFileInput {
+  display: none;
+}
+
+/* Estilo do botão customizado de Upload */
+.uploadButton {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.uploadButton:hover {
+  background-color: rgba(90, 10, 10, 0.4);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.uploadIcon {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Botão de Envio Principal */
+.submitBtn {
+  background-color: #b30000; /* Tom de vermelho idêntico ao botão 'Enviar Demo' da foto */
+  color: white;
+  font-weight: bold;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  padding: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+  width: 200px; /* Largura fixa alinhada à esquerda */
+}
+
+.submitBtn:hover {
+  transform: translateY(-2px);
+  background-color: #e60000;
+  box-shadow: 0 4px 15px rgba(230, 0, 0, 0.4);
+}
+
+/* Lado Direito: Contactos */
+.contactWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 56px; /* Alinha com o início do form */
+}
+
+.socialHeaderIcons {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.headerSocialIcon {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.2rem;
+  transition: color 0.2s ease;
+}
+
+.headerSocialIcon:hover {
+  color: white;
+}
+
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+}
+
+.infoIcon {
+  width: 18px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.1rem;
+}
+
+.brandContainer {
+  margin-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 24px;
+}
+
+.brandTitle {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: white;
+}
+
+.brandSubtitle {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.successAlert {
+  padding: 12px;
+  background-color: rgba(30, 150, 30, 0.2);
+  border: 1px solid #1ed760;
+  color: #1ed760;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.errorAlert {
+  padding: 12px;
+  background-color: rgba(150, 30, 30, 0.2);
+  border: 1px solid #ff4d4d;
+  color: #ff4d4d;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.submitBtn:disabled {
+  background-color: #551111;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* ================= RESPONSIVIDADE ================= */
+
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr; /* Quebra em uma única coluna */
+    gap: 48px;
+  }
+
+  .contactWrapper {
+    padding-top: 0;
+    gap: 32px;
+  }
+
+  .submitBtn {
+    width: 100%; /* Botão expande no Mobile */
+  }
+}

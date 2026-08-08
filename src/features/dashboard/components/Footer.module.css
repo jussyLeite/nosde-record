@@ -1,0 +1,122 @@
+/* src/features/dashboard/components/Footer.module.css */
+.footerContainer {
+  padding: 56px 32px 40px 32px;
+  background-color: transparent; /* Permite ver o gradiente Nosde de fundo */
+  margin-top: 48px;
+}
+
+.topSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 48px;
+}
+
+.linksGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(140px, 1fr));
+  gap: 32px;
+  flex: 1;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.columnTitle {
+  color: white;
+  font-size: 0.95rem;
+  font-weight: bold;
+}
+
+.linkList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.linkItem {
+  color: var(--spotify-text-muted);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.linkItem:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+/* Redes Sociais */
+.socialContainer {
+  display: flex;
+  gap: 16px;
+}
+
+.socialIcon {
+  width: 40px;
+  height: 40px;
+  background-color: #292929;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.socialIcon:hover {
+  background-color: var(--spotify-green); /* Destaque com a nossa cor principal */
+  transform: scale(1.05);
+}
+
+.divider {
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 40px 0 24px 0;
+}
+
+.bottomSection {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.copyright {
+  color: var(--spotify-text-muted);
+  font-size: 0.75rem;
+}
+
+/* ================= MEDIA QUERIES (Responsividade) ================= */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .linksGrid {
+    grid-template-columns: repeat(2, 1fr); /* Passa para 2 colunas por linha */
+  }
+}
+
+/* Smartphones (Mobile) */
+@media (max-width: 768px) {
+  .topSection {
+    flex-direction: column; /* Joga as redes sociais para baixo dos links */
+    gap: 40px;
+  }
+
+  .linksGrid {
+    grid-template-columns: 1fr; /* Cada categoria ocupa uma linha inteira */
+    gap: 28px;
+  }
+
+  .footerContainer {
+    padding: 40px 16px 24px 16px; /* Reduz margens internas no mobile */
+  }
+  
+  .socialContainer {
+    align-self: flex-start; /* Alinha os ícones à esquerda */
+  }
+}

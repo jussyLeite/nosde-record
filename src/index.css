@@ -1,4 +1,6 @@
-:root {
+
+
+/*:root {
   --text: #6b6375;
   --text-h: #08060d;
   --bg: #fff;
@@ -44,18 +46,46 @@
     --shadow:
       rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
   }
-}
+} 
 
 #root {
-  width: 100%;
+  width: 100%; /*
   /*max-width: 100%; */
-  margin: 0 auto;
-  text-align: center;
+  /*margin: 0 auto;
+  text-align: center; */
  /* border-inline: 1px solid var(--border); */
-  min-height: 100svh;
+ /* min-height: 100svh;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+} */
+
+/* src/index.css */
+:root {
+  --spotify-green: #6d040c;
+  --spotify-black: #000000;
+  --spotify-dark-gray: #121212;
+  --spotify-card-gray: #181818;
+  --spotify-card-hover: #282828;
+  --spotify-sidebar-card: #242424;
+  --spotify-text-main: #ffffff;
+  --spotify-text-muted: #b3b3b3;
+  --spotify-text-light: #a7a7a7;
+  --spotify-border: #292929;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--spotify-black);
+  color: var(--spotify-text-main);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
 }
 
 

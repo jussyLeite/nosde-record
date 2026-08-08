@@ -1,0 +1,39 @@
+/* src/features/dashboard/Dashboard.module.css */
+.dashboardLayout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 8px;
+  gap: 8px;
+  overflow: hidden;
+  background-color: var(--spotify-black);
+}
+
+.mainGrid {
+  display: flex;
+  flex: 1;
+  gap: 8px;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.sidebarWrapper {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.contentWrapper {
+  flex: 1;
+  background-color: var(--spotify-dark-gray);
+  border-radius: 8px;
+  overflow-y: auto;
+  position: relative;
+}
+
+.footerWrapper {
+  height: 65px;
+  flex-shrink: 0;
+}
