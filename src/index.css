@@ -61,6 +61,156 @@
 } */
 
 /* src/index.css */
+
+/* =========================================================
+   NOSDE RECORD - SISTEMA DE CORES
+   ========================================================= */
+
+:root {
+  /* Cores principais */
+  --nosde-red: #6d040c;
+  --nosde-red-light: #8f0a14;
+  --nosde-red-hover: #a30d18;
+  --nosde-red-soft: rgba(109, 4, 12, 0.18);
+
+  /* Fundo */
+  --nosde-black: #000000;
+  --nosde-dark: #0b0b0b;
+  --nosde-dark-gray: #121212;
+  --nosde-card: #181818;
+  --nosde-card-hover: #242424;
+  --nosde-sidebar: #121212;
+
+  /* Bordas */
+  --nosde-border: #292929;
+  --nosde-border-light: #333333;
+
+  /* Texto */
+  --nosde-text: #ffffff;
+  --nosde-text-secondary: #b3b3b3;
+  --nosde-text-muted: #8f8f8f;
+
+  /* Estados */
+  --nosde-success: #1db954;
+  --nosde-warning: #f5a623;
+  --nosde-error: #e22134;
+
+  /* Tipografia */
+  --font-main:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  /* Sombras */
+  --nosde-shadow:
+    rgba(0, 0, 0, 0.5) 0 10px 30px;
+
+  --nosde-shadow-small:
+    rgba(0, 0, 0, 0.4) 0 4px 12px;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HTML
+   ========================================================= */
+
+html {
+  width: 100%;
+  min-height: 100%;
+  background: var(--nosde-black);
+}
+
+
+/* =========================================================
+   BODY
+   ========================================================= */
+
+body {
+  margin: 0;
+
+  min-width: 320px;
+  min-height: 100vh;
+
+  background: var(--nosde-black);
+
+  color: var(--nosde-text);
+
+  font-family: var(--font-main);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* =========================================================
+   ROOT
+   ========================================================= */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--nosde-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
 :root {
   --spotify-green: #6d040c;
   --spotify-black: #000000;

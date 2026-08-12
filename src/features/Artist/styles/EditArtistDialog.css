@@ -1,0 +1,507 @@
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.artist-dialog-overlay {
+  position: fixed;
+  inset: 0;
+
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background: rgba(0, 0, 0, 0.78);
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  animation: artistDialogFadeIn 0.18s ease-out;
+}
+
+
+/* =========================================================
+   DIALOG
+========================================================= */
+
+.artist-dialog {
+  width: 100%;
+  max-width: 720px;
+
+  max-height: calc(100vh - 48px);
+
+  display: flex;
+  flex-direction: column;
+
+  background: var(--nosde-dark-gray);
+
+  border: 1px solid var(--nosde-border);
+
+  border-radius: 14px;
+
+  box-shadow: var(--nosde-shadow);
+
+  overflow: hidden;
+
+  animation: artistDialogSlideIn 0.2s ease-out;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.artist-dialog-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 24px 28px;
+
+  background: var(--nosde-card);
+
+  border-bottom: 1px solid var(--nosde-border);
+}
+
+.artist-dialog-header h2 {
+  margin: 0;
+
+  color: var(--nosde-text);
+
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.artist-dialog-header p {
+  margin: 6px 0 0;
+
+  color: var(--nosde-text-secondary);
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.artist-dialog-close {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border: 0;
+  border-radius: 8px;
+
+  background: transparent;
+
+  color: var(--nosde-text-secondary);
+
+  font-size: 26px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.artist-dialog-close:hover {
+  background: var(--nosde-card-hover);
+
+  color: var(--nosde-text);
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.artist-dialog-form {
+  overflow-y: auto;
+
+  padding: 26px 28px 0;
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.artist-dialog-section {
+  margin-bottom: 30px;
+}
+
+.artist-dialog-section-title {
+  margin-bottom: 20px;
+}
+
+.artist-dialog-section-title h3 {
+  margin: 0;
+
+  color: var(--nosde-text);
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.artist-dialog-section-title p {
+  margin: 5px 0 0;
+
+  color: var(--nosde-text-muted);
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.artist-form-group {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 18px;
+}
+
+.artist-form-group label {
+  margin-bottom: 8px;
+
+  color: var(--nosde-text-secondary);
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.artist-form-group input,
+.artist-form-group textarea {
+  width: 100%;
+
+  border: 1px solid var(--nosde-border);
+
+  border-radius: 8px;
+
+  background: var(--nosde-card);
+
+  color: var(--nosde-text);
+
+  font-size: 14px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.artist-form-group input {
+  height: 44px;
+
+  padding: 0 13px;
+}
+
+.artist-form-group textarea {
+  min-height: 120px;
+
+  padding: 12px 13px;
+
+  resize: vertical;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   PLACEHOLDER
+========================================================= */
+
+.artist-form-group input::placeholder,
+.artist-form-group textarea::placeholder {
+  color: var(--nosde-text-muted);
+}
+
+
+/* =========================================================
+   INPUT FOCUS
+========================================================= */
+
+.artist-form-group input:focus,
+.artist-form-group textarea:focus {
+  border-color: var(--nosde-red-light);
+
+  background: #1c1c1c;
+
+  box-shadow:
+    0 0 0 2px var(--nosde-red-soft);
+}
+
+
+/* =========================================================
+   HELP TEXT
+========================================================= */
+
+.artist-form-help {
+  margin-top: 6px;
+
+  color: var(--nosde-text-muted);
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   SOCIAL GRID
+========================================================= */
+
+.artist-social-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 0 18px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.artist-dialog-footer {
+  position: sticky;
+  bottom: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  margin: 4px -28px 0;
+
+  padding: 18px 28px;
+
+  background: var(--nosde-card);
+
+  border-top: 1px solid var(--nosde-border);
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.artist-btn {
+  height: 42px;
+
+  padding: 0 18px;
+
+  border-radius: 7px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    opacity 0.2s ease,
+    transform 0.15s ease;
+}
+
+.artist-btn:active {
+  transform: scale(0.98);
+}
+
+
+/* =========================================================
+   SECONDARY
+========================================================= */
+
+.artist-btn-secondary {
+  border: 1px solid var(--nosde-border-light);
+
+  background: transparent;
+
+  color: var(--nosde-text-secondary);
+}
+
+.artist-btn-secondary:hover {
+  background: var(--nosde-card-hover);
+
+  color: var(--nosde-text);
+}
+
+
+/* =========================================================
+   PRIMARY
+========================================================= */
+
+.artist-btn-primary {
+  border: 1px solid var(--nosde-red);
+
+  background: var(--nosde-red);
+
+  color: var(--nosde-text);
+}
+
+.artist-btn-primary:hover {
+  background: var(--nosde-red-hover);
+
+  border-color: var(--nosde-red-hover);
+}
+
+.artist-btn:disabled {
+  opacity: 0.55;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   SCROLLBAR DO DIALOG
+========================================================= */
+
+.artist-dialog-form::-webkit-scrollbar {
+  width: 6px;
+}
+
+.artist-dialog-form::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.artist-dialog-form::-webkit-scrollbar-thumb {
+  background: var(--nosde-border-light);
+
+  border-radius: 10px;
+}
+
+.artist-dialog-form::-webkit-scrollbar-thumb:hover {
+  background: #444;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes artistDialogFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes artistDialogSlideIn {
+  from {
+    opacity: 0;
+
+    transform: translateY(12px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 700px) {
+  .artist-dialog-overlay {
+    padding: 12px;
+  }
+
+  .artist-dialog {
+    max-height: calc(100vh - 24px);
+
+    border-radius: 12px;
+  }
+
+  .artist-dialog-header {
+    padding: 20px;
+  }
+
+  .artist-dialog-form {
+    padding: 22px 20px 0;
+  }
+
+  .artist-social-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .artist-dialog-footer {
+    margin-left: -20px;
+    margin-right: -20px;
+
+    padding: 16px 20px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .artist-dialog-overlay {
+    align-items: flex-end;
+
+    padding: 0;
+  }
+
+  .artist-dialog {
+    max-height: 94vh;
+
+    border-radius: 14px 14px 0 0;
+
+    border-bottom: 0;
+  }
+
+  .artist-dialog-header {
+    padding: 18px;
+  }
+
+  .artist-dialog-form {
+    padding: 20px 18px 0;
+  }
+
+  .artist-dialog-footer {
+    margin-left: -18px;
+    margin-right: -18px;
+
+    padding: 14px 18px;
+  }
+
+  .artist-btn {
+    flex: 1;
+  }
+}

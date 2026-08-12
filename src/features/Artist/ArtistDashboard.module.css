@@ -1,0 +1,499 @@
+/* =========================================================
+   ARTIST DASHBOARD
+   ========================================================= */
+
+.dashboard {
+  display: flex;
+
+  width: 100%;
+  min-height: 100vh;
+
+  background: var(--nosde-black);
+
+  color: var(--nosde-text);
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.sidebar {
+  position: fixed;
+
+  top: 8px;
+  left: 8px;
+  bottom: 8px;
+
+  width: 260px;
+
+  padding: 20px 12px;
+
+  display: flex;
+  flex-direction: column;
+
+  background: var(--nosde-sidebar);
+
+  border-radius: 8px;
+
+  z-index: 100;
+
+  overflow-y: auto;
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.logoArea {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 10px 12px 24px;
+}
+
+
+.logoImage {
+  width: 42px;
+  height: 42px;
+
+  object-fit: contain;
+}
+
+
+.logoText {
+  font-size: 18px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+
+  color: var(--nosde-text);
+}
+
+
+/* =========================================================
+   PERFIL RESUMIDO
+   ========================================================= */
+
+.profileSummary {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 12px;
+
+  margin-bottom: 18px;
+
+  background: var(--nosde-card);
+
+  border-radius: 8px;
+}
+
+
+.profileAvatar {
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: var(--nosde-red);
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  flex-shrink: 0;
+}
+
+
+.profileInfo {
+  min-width: 0;
+}
+
+
+.profileName {
+  font-size: 14px;
+
+  font-weight: 700;
+
+  color: var(--nosde-text);
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+
+.profileRole {
+  margin-top: 2px;
+
+  font-size: 12px;
+
+  color: var(--nosde-text-muted);
+}
+
+
+/* =========================================================
+   MENU
+   ========================================================= */
+
+.menu {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+
+.menuSection {
+  margin-top: 20px;
+
+  margin-bottom: 8px;
+
+  padding: 0 12px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+
+  color: var(--nosde-text-muted);
+}
+
+
+/* =========================================================
+   MENU ITEM
+   ========================================================= */
+
+.menuItem {
+  width: 100%;
+
+  min-height: 46px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 0 14px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: transparent;
+
+  color: var(--nosde-text-secondary);
+
+  cursor: pointer;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  text-align: left;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.15s ease;
+}
+
+
+.menuItem:hover {
+  background: var(--nosde-card-hover);
+
+  color: var(--nosde-text);
+}
+
+
+.menuItem:active {
+  transform: scale(0.98);
+}
+
+
+/* =========================================================
+   MENU ITEM ATIVO
+   ========================================================= */
+
+.menuItemActive {
+  background: var(--nosde-red);
+
+  color: var(--nosde-text);
+}
+
+
+.menuItemActive:hover {
+  background: var(--nosde-red-hover);
+
+  color: var(--nosde-text);
+}
+
+
+/* =========================================================
+   ÍCONE
+   ========================================================= */
+
+.menuIcon {
+  width: 22px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 17px;
+
+  flex-shrink: 0;
+}
+
+
+.menuLabel {
+  flex: 1;
+}
+
+
+/* =========================================================
+   BADGE DE NOTIFICAÇÕES
+   ========================================================= */
+
+.notificationBadge {
+  min-width: 20px;
+  height: 20px;
+
+  padding: 0 6px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: var(--nosde-red);
+
+  color: white;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   ESPAÇADOR
+   ========================================================= */
+
+.sidebarSpacer {
+  flex: 1;
+}
+
+
+/* =========================================================
+   SEPARADOR
+   ========================================================= */
+
+.divider {
+  height: 1px;
+
+  margin: 16px 8px;
+
+  background: var(--nosde-border);
+}
+
+
+/* =========================================================
+   LOGOUT
+   ========================================================= */
+
+.logout {
+  color: var(--nosde-text-secondary);
+}
+
+
+.logout:hover {
+  background: rgba(226, 33, 52, 0.15);
+
+  color: var(--nosde-error);
+}
+
+
+/* =========================================================
+   CONTEÚDO
+   ========================================================= */
+
+.main {
+  width: calc(100% - 284px);
+
+  min-height: 100vh;
+
+  margin-left: 276px;
+
+  padding: 8px;
+}
+
+
+/* =========================================================
+   ÁREA INTERNA
+   ========================================================= */
+
+.content {
+  min-height: calc(100vh - 16px);
+
+  padding: 32px;
+
+  background: var(--nosde-dark-gray);
+
+  border-radius: 8px;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 32px;
+}
+
+
+.headerTitle {
+  font-size: 28px;
+
+  font-weight: 700;
+
+  color: var(--nosde-text);
+}
+
+
+.headerSubtitle {
+  margin-top: 6px;
+
+  font-size: 14px;
+
+  color: var(--nosde-text-secondary);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .sidebar {
+    width: 220px;
+  }
+
+  .main {
+    width: calc(100% - 236px);
+
+    margin-left: 228px;
+  }
+
+  .content {
+    padding: 24px;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .sidebar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    width: 72px;
+
+    padding: 12px 8px;
+
+    border-radius: 0;
+  }
+
+
+  .logoArea {
+    justify-content: center;
+
+    padding: 10px 0 20px;
+  }
+
+
+  .logoText,
+  .profileInfo,
+  .menuLabel,
+  .menuSection,
+  .notificationBadge {
+    display: none;
+  }
+
+
+  .profileSummary {
+    justify-content: center;
+
+    padding: 8px;
+  }
+
+
+  .menuItem {
+    justify-content: center;
+
+    padding: 0;
+  }
+
+
+  .menuIcon {
+    font-size: 19px;
+  }
+
+
+  .main {
+    width: calc(100% - 72px);
+
+    margin-left: 72px;
+
+    padding: 0;
+  }
+
+
+  .content {
+    min-height: 100vh;
+
+    border-radius: 0;
+
+    padding: 20px;
+  }
+
+}

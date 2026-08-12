@@ -1,0 +1,468 @@
+/* =========================================================
+   SIDEBAR DO ARTISTA
+   ========================================================= */
+
+.sidebar {
+  position: fixed;
+
+  top: 8px;
+  left: 8px;
+  bottom: 8px;
+
+  width: 260px;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 18px 12px;
+
+  background: var(--nosde-sidebar);
+
+  border-radius: 8px;
+
+  overflow-y: auto;
+
+  z-index: 1000;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.logoArea {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 8px 12px 22px;
+}
+
+
+.logo {
+  width: 38px;
+  height: 38px;
+
+  object-fit: contain;
+
+  flex-shrink: 0;
+}
+
+
+.logoText {
+  color: var(--nosde-text);
+
+  font-size: 17px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.3px;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   PERFIL
+   ========================================================= */
+
+.profileCard {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 11px;
+
+  margin-bottom: 18px;
+
+  background: var(--nosde-card);
+
+  border-radius: 8px;
+}
+
+
+.avatar {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--nosde-red);
+
+  color: var(--nosde-text);
+
+  font-size: 16px;
+
+  font-weight: 700;
+}
+
+
+.profileInfo {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+
+.profileName {
+  color: var(--nosde-text);
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+
+.profileRole {
+  color: var(--nosde-text-muted);
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   NAVEGAÇÃO
+   ========================================================= */
+
+.navigation {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+
+.sectionTitle {
+  padding: 0 12px;
+
+  margin: 3px 0 8px;
+
+  color: var(--nosde-text-muted);
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   ITEM DO MENU
+   ========================================================= */
+
+.menuItem {
+  position: relative;
+
+  width: 100%;
+  min-height: 44px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 0 13px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: transparent;
+
+  color: var(--nosde-text-secondary);
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+
+.menuItem:hover {
+  background: var(--nosde-card-hover);
+
+  color: var(--nosde-text);
+}
+
+
+.menuItemActive {
+  background: var(--nosde-red);
+
+  color: var(--nosde-text);
+}
+
+
+.menuItemActive:hover {
+  background: var(--nosde-red-hover);
+
+  color: var(--nosde-text);
+}
+
+
+/* =========================================================
+   ÍCONE
+   ========================================================= */
+
+.menuIcon {
+  width: 22px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  font-size: 16px;
+}
+
+
+.menuLabel {
+  flex: 1;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   BADGE
+   ========================================================= */
+
+.badge {
+  min-width: 20px;
+  height: 20px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 6px;
+
+  border-radius: 10px;
+
+  background: var(--nosde-red-light);
+
+  color: white;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   ESPAÇADOR
+   ========================================================= */
+
+.spacer {
+  flex: 1;
+}
+
+
+/* =========================================================
+   PARTE INFERIOR
+   ========================================================= */
+
+.bottomSection {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+
+/* =========================================================
+   DIVISOR
+   ========================================================= */
+
+.divider {
+  height: 1px;
+
+  margin: 14px 8px;
+
+  background: var(--nosde-border);
+}
+
+
+/* =========================================================
+   LOGOUT
+   ========================================================= */
+
+.logoutButton {
+  color: var(--nosde-text-secondary);
+}
+
+
+.logoutButton:hover {
+  background: rgba(226, 33, 52, 0.12);
+
+  color: var(--nosde-error);
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+.sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #333;
+
+  border-radius: 10px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .sidebar {
+    width: 225px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .sidebar {
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    width: 72px;
+
+    padding: 12px 8px;
+
+    border-radius: 0;
+  }
+
+
+  .logoArea {
+    justify-content: center;
+
+    padding: 8px 0 20px;
+  }
+
+
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+
+
+  .logoText {
+    display: none;
+  }
+
+
+  .profileCard {
+    justify-content: center;
+
+    padding: 8px;
+
+    background: transparent;
+  }
+
+
+  .profileInfo {
+    display: none;
+  }
+
+
+  .sectionTitle {
+    display: none;
+  }
+
+
+  .menuItem {
+    justify-content: center;
+
+    padding: 0;
+  }
+
+
+  .menuIcon {
+    font-size: 18px;
+  }
+
+
+  .menuLabel {
+    display: none;
+  }
+
+
+  .badge {
+    position: absolute;
+
+    top: 3px;
+    right: 3px;
+
+    min-width: 16px;
+    height: 16px;
+
+    padding: 0 4px;
+
+    font-size: 9px;
+  }
+
+
+  .divider {
+    margin: 12px 4px;
+  }
+
+}

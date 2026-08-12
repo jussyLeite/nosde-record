@@ -10,6 +10,9 @@ import LoginPage from "../features/auth/LoginPage";
 import DashboardArtist from "../features/Artist/DashboardArtist";
 
 import ProtectedRoute from "./ProtectedRoute";
+import ArtistProfile from "../features/Artist/pages/ArtistProfile";
+import ArtistLayout from "../features/Artist/layouts/ArtistLayout";
+import ArtistMusic from "../features/Artist/pages/ArtistMusicUpload";
 
 export default function AppRoutes() {
   return (
@@ -31,16 +34,56 @@ export default function AppRoutes() {
         />
 
 
+
+        
+
+
         {/* ===================================== */}
         {/* ROTAS PROTEGIDAS                      */}
         {/* ===================================== */}
 
-        <Route element={<ProtectedRoute />}>
+        
 
-          <Route
-            path="/artist/dashboard"
-            element={<DashboardArtist />}
-          />
+         <Route element={<ProtectedRoute />}>
+
+          <Route path="/artist" element={<ArtistLayout />}>
+
+    
+           {/*<Route
+              index
+              element={
+                <Navigate
+                  to="/artist/dashboard"
+                  replace
+                />
+              }
+            /> */} 
+            
+            {/* 
+             <Route
+              path="dashboard"
+              element={<DashboardArtist />}
+            />
+
+
+            */}
+
+             <Route
+              path="dashboard"
+              element={<DashboardArtist />}
+            />
+            
+            <Route
+              path="profile"
+              element={<ArtistProfile />}
+            />
+
+            <Route
+                path="musicupload"
+                element={<ArtistMusic />}
+                />
+
+          </Route>
 
         </Route>
 
