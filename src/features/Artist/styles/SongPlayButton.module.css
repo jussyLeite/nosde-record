@@ -1,0 +1,30 @@
+.song-play-button {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+
+  background: var(--nosde-red);
+  color: var(--nosde-text);
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.song-play-button:hover {
+  background: var(--nosde-red-hover);
+
+  transform: scale(1.05);
+}
+
+.song-play-button:active {
+  transform: scale(0.95);
+}

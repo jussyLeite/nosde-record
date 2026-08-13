@@ -7,7 +7,7 @@ import { api } from "./api";
 
 export async function getSongs(): Promise<Song[]> {
   const response = await api.get<SongsResponse>(
-    "/songs/all"
+    "/songs/my-songs"
   );
 
   return response.data.data;

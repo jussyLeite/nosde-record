@@ -7,10 +7,21 @@ export interface Song {
   genre: string;
   description: string | null;
 
-  cover: string | null;
-  audio: string | null;
+  coverImage: string | null;
+  audioFile: string | null;
 
-  status: string;
+   duration?: number | null;
+
+  downloads: number;
+
+  streams: number;
+
+    status:
+    | "PUBLISHED"
+    | "PENDING"
+    | "PROCESSING"
+    | "REJECTED"
+    | "DRAFT";
 
   createdAt: string;
   updatedAt?: string;

@@ -1,0 +1,585 @@
+/* =========================================================
+   PLAYER
+========================================================= */
+
+.player {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 430px;
+
+  overflow: hidden;
+
+  border-radius: 12px;
+
+  background:
+    var(--nosde-dark-gray);
+
+  color:
+    var(--nosde-text);
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   BLURRED BACKGROUND
+========================================================= */
+
+.background {
+  position: absolute;
+
+  inset: -40px;
+
+  z-index: -2;
+
+  background-position: center;
+
+  background-size: cover;
+
+  filter: blur(45px);
+
+  transform: scale(1.15);
+
+  opacity: 0.45;
+}
+
+
+.overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -1;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(109, 4, 12, 0.92) 0%,
+      rgba(70, 3, 9, 0.94) 42%,
+      rgba(11, 11, 11, 0.98) 100%
+    );
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.content {
+  display: flex;
+
+  align-items: flex-end;
+
+  gap: 32px;
+
+  min-height: 330px;
+
+  padding: 48px 48px 32px;
+}
+
+
+/* =========================================================
+   COVER
+========================================================= */
+
+.coverWrapper {
+  flex-shrink: 0;
+
+  width: 250px;
+
+  height: 250px;
+
+  border-radius: 8px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.55);
+}
+
+
+.cover {
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+
+/* =========================================================
+   INFORMATION
+========================================================= */
+
+.info {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: flex-end;
+
+  min-width: 0;
+
+  padding-bottom: 8px;
+}
+
+
+.type {
+  margin-bottom: 12px;
+
+  color:
+    var(--nosde-text-secondary);
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+
+.title {
+  margin: 0;
+
+  color:
+    var(--nosde-text);
+
+  font-size: clamp(
+    42px,
+    6vw,
+    78px
+  );
+
+  line-height: 0.98;
+
+  font-weight: 800;
+
+  letter-spacing: -0.045em;
+
+  max-width: 900px;
+
+  word-break: break-word;
+}
+
+
+.artist {
+  margin-top: 20px;
+
+  color:
+    var(--nosde-text);
+
+  font-size: 16px;
+
+  font-weight: 600;
+}
+
+
+.metadata {
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-top: 10px;
+
+  color:
+    var(--nosde-text-secondary);
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   CONTROLS AREA
+========================================================= */
+
+.controlsArea {
+  display: grid;
+
+  grid-template-columns:
+    auto
+    minmax(300px, 1fr)
+    auto;
+
+  align-items: center;
+
+  gap: 28px;
+
+  padding:
+    18px 40px 26px;
+
+  background:
+    rgba(0, 0, 0, 0.28);
+
+  border-top:
+    1px solid rgba(
+      255,
+      255,
+      255,
+      0.06
+    );
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.controls {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+}
+
+
+.secondaryButton {
+  width: 40px;
+
+  height: 40px;
+
+  border: none;
+
+  background: transparent;
+
+  color:
+    var(--nosde-text-secondary);
+
+  cursor: pointer;
+
+  font-size: 20px;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.secondaryButton:hover {
+  color:
+    var(--nosde-text);
+
+  transform:
+    scale(1.08);
+}
+
+
+.playButton {
+  width: 54px;
+
+  height: 54px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background:
+    var(--nosde-text);
+
+  color:
+    var(--nosde-black);
+
+  cursor: pointer;
+
+  font-size: 17px;
+
+  font-weight: 700;
+
+  box-shadow:
+    0 6px 20px
+    rgba(0, 0, 0, 0.3);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.playButton:hover {
+  transform:
+    scale(1.07);
+
+  background:
+    var(--nosde-red-hover);
+
+  color:
+    var(--nosde-text);
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.progressContainer {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  width: 100%;
+}
+
+
+.time {
+  width: 38px;
+
+  color:
+    var(--nosde-text-muted);
+
+  font-size: 11px;
+
+  text-align: center;
+
+  font-variant-numeric:
+    tabular-nums;
+}
+
+
+.progressWrapper {
+  flex: 1;
+
+  display: flex;
+
+  align-items: center;
+}
+
+
+.progress {
+  width: 100%;
+
+  height: 4px;
+
+  appearance: none;
+
+  border-radius: 10px;
+
+  outline: none;
+
+  cursor: pointer;
+
+  background:
+    linear-gradient(
+      to right,
+      var(--nosde-red)
+      var(--progress),
+      rgba(255, 255, 255, 0.2)
+      var(--progress)
+    );
+}
+
+
+/* Chrome / Edge / Safari */
+
+.progress::-webkit-slider-thumb {
+  appearance: none;
+
+  width: 12px;
+
+  height: 12px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background:
+    var(--nosde-text);
+
+  opacity: 0;
+
+  transition:
+    opacity 0.2s ease;
+}
+
+
+.progress:hover::-webkit-slider-thumb {
+  opacity: 1;
+}
+
+
+/* Firefox */
+
+.progress::-moz-range-thumb {
+  width: 12px;
+
+  height: 12px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background:
+    var(--nosde-text);
+
+  opacity: 0;
+}
+
+
+/* =========================================================
+   VOLUME
+========================================================= */
+
+.volume {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  min-width: 150px;
+}
+
+
+.volumeButton {
+  width: 32px;
+
+  height: 32px;
+
+  border: none;
+
+  background: transparent;
+
+  color:
+    var(--nosde-text-secondary);
+
+  cursor: pointer;
+
+  font-size: 16px;
+}
+
+
+.volumeButton:hover {
+  color:
+    var(--nosde-text);
+}
+
+
+.volumeSlider {
+  width: 100px;
+
+  height: 4px;
+
+  appearance: none;
+
+  border-radius: 10px;
+
+  accent-color:
+    var(--nosde-red);
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .content {
+    min-height: auto;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding:
+      36px 24px 28px;
+  }
+
+
+  .coverWrapper {
+    width: 220px;
+
+    height: 220px;
+  }
+
+
+  .info {
+    align-items: center;
+  }
+
+
+  .title {
+    font-size: 42px;
+  }
+
+
+  .metadata {
+    justify-content: center;
+  }
+
+
+  .controlsArea {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+
+    padding:
+      18px 24px 24px;
+  }
+
+
+  .controls {
+    justify-content: center;
+  }
+
+
+  .volume {
+    justify-content: center;
+  }
+
+}
+
+
+@media (max-width: 500px) {
+
+  .player {
+    border-radius: 8px;
+  }
+
+
+  .coverWrapper {
+    width: 180px;
+
+    height: 180px;
+  }
+
+
+  .title {
+    font-size: 34px;
+  }
+
+
+  .content {
+    padding:
+      28px 16px 22px;
+  }
+
+
+  .controlsArea {
+    padding:
+      16px;
+  }
+
+
+  .volume {
+    display: none;
+  }
+
+}

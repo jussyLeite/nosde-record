@@ -13,6 +13,7 @@ import ProtectedRoute from "./ProtectedRoute";
 import ArtistProfile from "../features/Artist/pages/ArtistProfile";
 import ArtistLayout from "../features/Artist/layouts/ArtistLayout";
 import ArtistMusic from "../features/Artist/pages/ArtistMusicUpload";
+import ArtistMyMusic from "../features/Artist/pages/ArtistMusic";
 
 export default function AppRoutes() {
   return (
@@ -82,6 +83,10 @@ export default function AppRoutes() {
                 path="musicupload"
                 element={<ArtistMusic />}
                 />
+            <Route 
+             path="music"
+             element={<ArtistMyMusic/>}
+             />
 
           </Route>
 

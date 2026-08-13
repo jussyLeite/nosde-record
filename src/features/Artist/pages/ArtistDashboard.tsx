@@ -1,6 +1,8 @@
+import { useEffect, useState } from "react";
 import { useAuth } from "../../../context/AuthContext";
-
+import type { Song } from "../../../types/Song";
 import styles from "../styles/ArtistLayout.module.css";
+import { getSongs } from "../../../services/song.service";
 
 
 export default function ArtistDashboard() {
@@ -15,9 +17,82 @@ export default function ArtistDashboard() {
     user,
   } = auth;
 
+  
+    const [songs, setSongs] =
+      useState<Song[]>([]);
+  
+    const [loading, setLoading] =
+      useState(true);
+  
+    const [error, setError] =
+      useState<string | null>(null);
+    
+    const [totalMusic, setTotalMusic] = useState<Number | null>(null);
+    const [download, setDownload] = useState<Number | null>(null);
+    const [streams, setStreams] = useState<Number | null>(null);
+
 
   const userName =
     user?.name || "Artista";
+
+   const loadSongs = async () => {
+  
+      try {
+        setLoading(true);
+        setError(null);
+  
+        const data = await getSongs();
+  
+        console.log("DataSongs: ",data);
+        const sortedSongs = [...data].sort(
+          (a, b) =>
+            new Date(b.createdAt).getTime() -
+            new Date(a.createdAt).getTime()
+        );
+  
+        setSongs(sortedSongs);
+        setTotalMusic(sortedSongs.length);
+        setDownload(countDownloads());
+        setStreams(countStreams());
+      
+      } catch (error) {
+  
+        console.error(
+          "Erro ao carregar músicas:",
+          error
+        );
+  
+        setError(
+          "Não foi possível carregar as músicas."
+        );
+  
+      } finally {
+        setLoading(false);
+      }
+    };
+    
+  
+    useEffect(() => {
+  
+      loadSongs();
+
+    }, []);
+
+    function countDownloads(): number {
+      return songs.reduce((total, song) => {
+        // Garante que se o campo downloads não existir ou for inválido, soma 0
+        const downloadCount = Number(song.downloads) || 0;
+        return total + downloadCount;
+      }, 0);
+    }
+
+     function countStreams(): number {
+      return songs.reduce((total, song) => {
+        // Garante que se o campo downloads não existir ou for inválido, soma 0
+        const countStreams = Number(song.streams) || 0;
+        return total + countStreams;
+      }, 0);
+    }
 
 
   return (
@@ -67,7 +142,7 @@ export default function ArtistDashboard() {
             </span>
 
             <strong className={styles.statValue}>
-              0
+              { totalMusic?.toString() }
             </strong>
 
           </div>
@@ -139,7 +214,7 @@ export default function ArtistDashboard() {
             </span>
 
             <strong className={styles.statValue}>
-              0
+              {download?.toString()}
             </strong>
 
           </div>

@@ -5,6 +5,7 @@ import type { CreateSongData } from "../../../types/CreateSongData";
 import { createSong, getSongs } from "../../../services/song.service";
 
 import "../styles/ArtistMusic.css";
+import SongPlayButton from "../component/SongPlayButton";
 
 export default function ArtistMusic() {
 
@@ -109,26 +110,7 @@ export default function ArtistMusic() {
 
     } catch (error) {
 
-      console.error("ERRO COMPLETO:", error);
-      console.log("Error: cretedSongs 1");
-
-    console.error(
-      "STATUS:",
-      error
-    );
-
-    console.error(
-      "RESPOSTA DO BACKEND:",
-      error
-    );
-
-    console.error(
-      "MENSAGEM:",
-      error
-    );
-
-    console.log("Error: cretedSongs");
-
+     
       throw error;
 
     } finally {
@@ -162,7 +144,7 @@ export default function ArtistMusic() {
   /* =====================================================
      STATUS
   ===================================================== */
-/*
+
   const getStatusLabel = (
     status: string
   ) => {
@@ -213,7 +195,7 @@ export default function ArtistMusic() {
         return "song-status";
 
     }
-  };  */
+  }; 
 
 
   return (
@@ -355,6 +337,10 @@ export default function ArtistMusic() {
                 <tr>
 
                   <th>
+                    Play
+                  </th>
+
+                  <th>
                     Música
                   </th>
 
@@ -374,6 +360,7 @@ export default function ArtistMusic() {
                     Data
                   </th>
 
+
                 </tr>
 
               </thead>
@@ -390,13 +377,22 @@ export default function ArtistMusic() {
                     ========================== */}
 
                     <td>
+                    <td>
+                      <SongPlayButton 
+                        audioUrl={`/songs/${song.audioFile}`} 
+                      />
+                    </td>
+
+                  </td>
+
+                    <td>
 
                       <div className="song-title-cell">
 
-                        {song.cover ? (
+                        {song.coverImage ? (
 
                           <img
-                            src={song.cover}
+                            src={`/covers/${song.coverImage}`}
                             alt={song.title}
                             className="song-cover"
                           />
@@ -470,7 +466,7 @@ export default function ArtistMusic() {
                         STATUS
                     ========================== */}
 
-                    {/*<td>
+                    <td>
 
                       <span
                         className={getStatusClass(
@@ -482,16 +478,8 @@ export default function ArtistMusic() {
                         )}
                       </span>
 
-                    </td>*/}
-                    <td>
-                    <span
-                        className="song-artist"
-                      >
-                        PUBLISHED
-                      </span>
-
                     </td>
-
+                
 
                     {/* ==========================
                         DATA

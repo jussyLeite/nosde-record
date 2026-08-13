@@ -2,6 +2,8 @@ import type { ReactNode } from "react";
 import { Outlet } from "react-router-dom";
 import ArtistSidebar from "../component/ArtistSidebar";
 import styles from "../styles/ArtistLayout.module.css";
+import { AudioPlayerProvider } from "../../../components/AudioPlayerContext";
+import GlobalAudioPlayer from "../component/GlobalAudioPlayer";
 
 
 interface ArtistLayoutProps {
@@ -28,15 +30,21 @@ export default function ArtistLayout({
           ÁREA PRINCIPAL
       ================================================= */}
 
-      <main className={styles.main}>
 
-        <div className={styles.content}>
+       <AudioPlayerProvider>
 
-          {children ?? <Outlet />}
+            <main className={styles.main}>
 
-        </div>
+            <div className={styles.content}>
 
-      </main>
+              {children ?? <Outlet />}
+
+            </div>
+
+          </main>
+        
+         <GlobalAudioPlayer />
+       </AudioPlayerProvider>
 
     </div>
 

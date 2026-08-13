@@ -114,6 +114,7 @@ export default function UploadSongDialog({
 
         cover,
         audio,
+        
       });
 
       setSucess("Upload da musica feito com sucesso");

@@ -1,0 +1,284 @@
+.player {
+  position: fixed;
+
+  left: 24px;
+  right: 24px;
+  bottom: 20px;
+
+  z-index: 9999;
+
+  display: grid;
+
+  grid-template-columns:
+    56px
+    minmax(150px, 1fr)
+    auto
+    minmax(260px, 1.5fr)
+    40px;
+
+  align-items: center;
+
+  gap: 18px;
+
+  min-height: 76px;
+
+  padding: 10px 18px;
+
+  background:
+    rgba(18, 18, 18, 0.96);
+
+  border:
+    1px solid var(--nosde-border);
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 12px 40px
+    rgba(0, 0, 0, 0.65);
+
+  backdrop-filter:
+    blur(18px);
+}
+
+
+/* =========================================================
+   COVER
+========================================================= */
+
+.cover {
+  width: 56px;
+  height: 56px;
+
+  object-fit: cover;
+
+  border-radius: 7px;
+}
+
+
+/* =========================================================
+   INFO
+========================================================= */
+
+.info {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.info strong {
+  overflow: hidden;
+
+  color: var(--nosde-text);
+
+  font-size: 14px;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+}
+
+.info span {
+  overflow: hidden;
+
+  color: var(--nosde-text-muted);
+
+  font-size: 12px;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   CONTROLS
+========================================================= */
+
+.controls {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+.controls button {
+  width: 34px;
+  height: 34px;
+
+  border: none;
+
+  background: transparent;
+
+  color: var(--nosde-text-secondary);
+
+  cursor: pointer;
+
+  font-size: 16px;
+}
+
+.controls button:hover {
+  color: var(--nosde-text);
+}
+
+.controls .play {
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  background:
+    var(--nosde-red);
+
+  color:
+    var(--nosde-text);
+
+  font-size: 14px;
+}
+
+.controls .play:hover {
+  background:
+    var(--nosde-red-hover);
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.progressArea {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.progressArea span {
+  min-width: 34px;
+
+  color:
+    var(--nosde-text-muted);
+
+  font-size: 10px;
+
+  text-align: center;
+}
+
+.progressArea input {
+  width: 100%;
+
+  height: 4px;
+
+  appearance: none;
+
+  border-radius: 10px;
+
+  outline: none;
+
+  cursor: pointer;
+
+  background:
+    linear-gradient(
+      to right,
+      var(--nosde-red)
+      var(--progress),
+      #3a3a3a
+      var(--progress)
+    );
+}
+
+.progressArea input::-webkit-slider-thumb {
+  appearance: none;
+
+  width: 11px;
+  height: 11px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background:
+    var(--nosde-text);
+}
+
+
+/* =========================================================
+   CLOSE
+========================================================= */
+
+.close {
+  width: 34px;
+  height: 34px;
+
+  border: none;
+
+  background: transparent;
+
+  color:
+    var(--nosde-text-muted);
+
+  cursor: pointer;
+
+  font-size: 25px;
+
+  line-height: 1;
+}
+
+.close:hover {
+  color:
+    var(--nosde-text);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .player {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+
+    grid-template-columns:
+      50px
+      1fr
+      auto
+      35px;
+
+    gap: 12px;
+  }
+
+  .cover {
+    width: 50px;
+    height: 50px;
+  }
+
+  .progressArea {
+    display: none;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .player {
+    grid-template-columns:
+      50px
+      1fr
+      38px
+      35px;
+  }
+
+  .controls button:not(.play) {
+    display: none;
+  }
+
+}
