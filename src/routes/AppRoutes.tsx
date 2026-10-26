@@ -14,6 +14,14 @@ import ArtistProfile from "../features/Artist/pages/ArtistProfile";
 import ArtistLayout from "../features/Artist/layouts/ArtistLayout";
 import ArtistMusic from "../features/Artist/pages/ArtistMusicUpload";
 import ArtistMyMusic from "../features/Artist/pages/ArtistMusic";
+import DashboardAdmin from "../features/admin/DashboardAdmin";
+import AdminLayout from "../features/admin/layouts/AdminLayout";
+import AdminDashboard from "../features/admin/pages/AdminDashboardPage";
+import AdminCatalog from "../features/admin/pages/AdminCatalog";
+import Artist from "../features/admin/pages/Artists.";
+import SubmissionsPage from "../features/admin/pages/Submissions";
+import SongReviewPage from "../features/admin/pages/SongReviewPage";
+import UsersPage from "../features/admin/pages/UsersPage";
 
 export default function AppRoutes() {
   return (
@@ -46,6 +54,40 @@ export default function AppRoutes() {
         
 
          <Route element={<ProtectedRoute />}>
+
+         <Route path="/admin" element={<AdminLayout />} >
+
+          <Route
+              path="dashboard"
+              element={ <AdminDashboard/> }
+          />
+
+           <Route
+              path="catalog"
+              element={ <AdminCatalog/> }
+          />  
+
+          <Route
+              path="artists"
+              element={ <Artist /> }
+          />
+
+          <Route
+           path="submission"
+           element={ <SubmissionsPage /> }
+          />
+
+          <Route
+           path="users"
+           element={ <UsersPage /> }
+          />
+
+          <Route 
+            path="submissions/:id" 
+            element={<SongReviewPage />} 
+          />
+         
+         </Route>
 
           <Route path="/artist" element={<ArtistLayout />}>
 

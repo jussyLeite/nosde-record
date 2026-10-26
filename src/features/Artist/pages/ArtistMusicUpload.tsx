@@ -379,7 +379,7 @@ export default function ArtistMusic() {
                     <td>
                     <td>
                       <SongPlayButton 
-                        audioUrl={`/songs/${song.audioFile}`} 
+                        audioUrl={`${song.audioFile}`} 
                       />
                     </td>
 

@@ -8,7 +8,7 @@
   width: 100%;
   min-height: 100vh;
 
-  background: var(--nosde-black);
+  background: var(--);
 
   color: var(--nosde-text);
 }

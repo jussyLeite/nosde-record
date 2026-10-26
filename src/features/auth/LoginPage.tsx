@@ -4,12 +4,9 @@ import styles from "./Login.module.css";
 import nosdelogo  from "../../assets/images/logo2.png";
 import { useAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
-
+import { log } from "firebase/firestore/pipelines";
 
 export default function LoginPage() {
-
-
-  
 
   const { login } = useAuth();
   const navigate = useNavigate();
@@ -17,21 +14,30 @@ export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
- 
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null); 
+
+  const auth = useAuth();
+
+  if (!auth) {
+    return null;
+  }
+
+  const {
+    user,
+  } = auth;
   
   
   const handleNavigateToDashboard = () => {
     navigate("/");
   };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (email && password) {
       setIsLoading(true);
       setErrorMessage(null); // Limpa erros anteriores antes de tentar novamente
-
 
            console.log(
         "Tentando iniciar sessão..."
@@ -40,33 +46,30 @@ export default function LoginPage() {
 
       try {
         // 3. Chamar a função de login global ligada ao Axios e Node.js
-        await login({ 
+       const loggedUser = await login({ 
           email: email, 
           password: password 
         });
 
         
-
-        // Se o login der certo, limpa os campos e retorna ao dashboard já autenticado
         clearField();
-        //onBackToDashboard();
+       switch (loggedUser.role) {
+        case "ADMIN":
+          navigate("/admin/dashboard", { replace: true });
+          break;
 
-        navigate(
-        "/artist/dashboard",
-        {
-          replace: true,
-        }
-      );
-        
-    
+        case "ARTIST":
+          navigate("/artist/dashboard", { replace: true });
+          break;
+
+        default:
+          // Rota padrão para perfis genéricos ou não mapeados
+          navigate("/dashboard", { replace: true });
+          break;
+      }
+
       } catch (error: any) {
-        console.error("Erro no login:", error);
-
-        console.log("::   ############################################### ::")
-        console.log("Email: ",email);
-        console.log("Password:",password);
-        
-        
+       
         // Trata mensagens vindas do backend ou erros de conexão
         if (error.response && error.response.data && error.response.data.message) {
           setErrorMessage(error.response.data.message);
@@ -80,7 +83,6 @@ export default function LoginPage() {
     }
   };
 
-  
 
   function clearField()
   {

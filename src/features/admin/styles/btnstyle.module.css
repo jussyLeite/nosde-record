@@ -1,0 +1,113 @@
+/* ============================================================
+   AÇÕES
+============================================================ */
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* ============================================================
+   BOTÃO EDITAR
+============================================================ */
+
+.editButton,
+.deleteButton {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 6px;
+  border: 1px solid transparent;
+
+  font-size: 13px;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.15s ease;
+}
+
+/* EDITAR */
+
+.editButton {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: #353535;
+  color: #d6d6d6;
+}
+
+.editButton:hover {
+  background: rgba(109, 4, 12, 0.15);
+  border-color: #6d040c;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.editButton:active {
+  transform: translateY(0);
+}
+
+/* ============================================================
+   BOTÃO REMOVER
+============================================================ */
+
+.deleteButton {
+  background: rgba(255, 60, 60, 0.06);
+  border-color: rgba(255, 80, 80, 0.2);
+  color: #d98b8b;
+}
+
+.deleteButton:hover {
+  background: rgba(255, 60, 60, 0.14);
+  border-color: rgba(255, 80, 80, 0.45);
+  color: #ff7070;
+  transform: translateY(-1px);
+}
+
+.deleteButton:active {
+  transform: translateY(0);
+}
+
+/* ============================================================
+   ÍCONES
+============================================================ */
+
+.editButton i,
+.deleteButton i {
+  font-size: 13px;
+  line-height: 1;
+}
+
+/* ============================================================
+   ACESSIBILIDADE / FOCUS
+============================================================ */
+
+.editButton:focus-visible,
+.deleteButton:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 600px) {
+  .actions {
+    gap: 6px;
+  }
+
+  .editButton,
+  .deleteButton {
+    width: 32px;
+    height: 32px;
+  }
+}

@@ -1,0 +1,173 @@
+.container {
+  background-color: #121212;
+  min-height: 100vh;
+  color: #ffffff;
+  padding: 24px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.backButton {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  width: fit-content;
+  transition: color 0.2s;
+}
+
+.backButton:hover {
+  color: #ffffff;
+}
+
+/* Cabeçalho com degradé dinâmico estilo Spotify */
+.heroHeader {
+  background: linear-gradient(to bottom, #53382c, #121212);
+  padding: 40px 32px;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
+}
+
+.coverImage {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+}
+
+.heroInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.songTitle {
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 0;
+  letter-spacing: -1px;
+}
+
+.heroMeta {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 8px;
+}
+
+.badge {
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  width: fit-content;
+  text-transform: uppercase;
+}
+
+.pending { background: rgba(255, 165, 0, 0.2); color: orange; border: 1px solid orange; }
+.published { background: rgba(30, 215, 96, 0.2); color: #1ed760; border: 1px solid #1ed760; }
+.processing { background: rgba(0, 150, 255, 0.2); color: #0096ff; border: 1px solid #0096ff; }
+.rejected { background: rgba(255, 77, 77, 0.2); color: #ff4d4d; border: 1px solid #ff4d4d; }
+.draft { background: rgba(255, 255, 255, 0.1); color: #aaa; border: 1px solid #aaa; }
+
+/* Barra de Ações / Player */
+.actionBar {
+  padding: 0 12px;
+}
+
+.audioPlayer {
+  width: 100%;
+  max-width: 400px;
+  accent-color: #1ed760;
+}
+
+.noAudio {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+/* Secção da Tabela Estilo Spotify */
+.contentSection {
+  padding: 0 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tableHeader {
+  display: grid;
+  grid-template-columns: 40px 2fr 1fr 2fr;
+  padding: 0 16px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 8px;
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: 40px 2fr 1fr 2fr;
+  align-items: center;
+  padding: 12px 16px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.02);
+  transition: background 0.2s;
+}
+
+.tableRow:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.trackInfoCell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.trackInfoCell strong {
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+.trackInfoCell span {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.moderationButtons {
+  display: flex;
+  gap: 8px;
+}
+
+.moderationButtons button {
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: none;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.moderationButtons button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.btnApprove { background-color: #138d3e; color: #000; }
+.btnReject { background-color: #741717; color: #fff; }
+.btnProcess { background-color: #053658; color: #fff; }
+
+.loading, .error {
+  padding: 64px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+}

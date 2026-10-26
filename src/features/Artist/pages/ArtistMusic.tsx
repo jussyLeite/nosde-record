@@ -197,11 +197,9 @@ export default function ArtistMyMusic() {
 
                 <MusicPlayer />
                  <SongTable
-               songs={songs}
-              />
+                  songs={songs}
+                  />
             </div>
-
-
         )}
 
       </div>

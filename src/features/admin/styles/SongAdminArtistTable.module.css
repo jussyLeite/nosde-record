@@ -1,0 +1,246 @@
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container {
+  width: 100%;
+  overflow-x: auto;
+
+  background: var(--nosde-card);
+
+  border: 1px solid var(--nosde-border);
+  border-radius: 10px;
+
+  box-shadow: var(--nosde-shadow-small);
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  min-width: 900px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.table thead {
+  background: var(--nosde-dark-gray);
+}
+
+.table th {
+  padding: 15px 14px;
+
+  text-align: left;
+
+  color: var(--nosde-text-muted);
+
+  font-size: 12px;
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  border-bottom: 1px solid var(--nosde-border);
+
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+
+/* Primeira coluna: botão Play */
+
+.table th:first-child {
+  width: 58px;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+.table tbody tr {
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+
+  border-bottom: 1px solid var(--nosde-border);
+}
+
+.table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.table tbody tr:hover {
+  background: var(--nosde-card-hover);
+}
+
+.table td {
+  padding: 13px 14px;
+
+  color: var(--nosde-text-secondary);
+
+  font-size: 13px;
+
+  vertical-align: middle;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   PLAY COLUMN
+========================================================= */
+
+.playColumn {
+  width: 58px;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.empty {
+  padding: 60px 20px !important;
+
+  text-align: center;
+
+  color: var(--nosde-text-muted) !important;
+
+  font-size: 14px !important;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.loading {
+  min-height: 300px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: var(--nosde-text-secondary);
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .container {
+    border-radius: 8px;
+  }
+
+  .table {
+    min-width: 800px;
+  }
+
+  .table th {
+    padding: 12px 10px;
+
+    font-size: 11px;
+  }
+
+  .table td {
+    padding: 11px 10px;
+
+    font-size: 12px;
+  }
+}
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: var(--nosde-dark-gray);
+  border-top: 1px solid var(--nosde-border);
+  border-bottom-left-radius: 9px;
+  border-bottom-right-radius: 9px;
+}
+
+.paginationInfo {
+  font-size: 13px;
+  color: var(--nosde-text-muted);
+}
+
+.paginationInfo strong {
+  color: var(--nosde-text-secondary);
+  font-weight: 600;
+}
+
+.paginationButtons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pageIndicator {
+  font-size: 13px;
+  color: var(--nosde-text-secondary);
+  min-width: 90px;
+  text-align: center;
+}
+
+.pageButton {
+  background: var(--nosde-card);
+  border: 1px solid var(--nosde-border);
+  color: var(--nosde-text-secondary);
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 11px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pageButton:hover:not(:disabled) {
+  background: var(--nosde-card-hover);
+  border-color: var(--nosde-text-muted);
+  color: #fff; /* Altera se preferires outra cor ativa */
+}
+
+.pageButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* RESPONSIVO PARA PAGINAÇÃO */
+@media (max-width: 768px) {
+  .pagination {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    padding: 14px 16px;
+  }
+  
+  .paginationInfo {
+    font-size: 12px;
+  }
+}

@@ -1,7 +1,8 @@
 import type { Song } from "../../../types/Song";
 
 import { useAudioPlayer } from "../../../components/AudioPlayerContext";
-import '../styles/SongRow.module.css';
+import '../styles/SongRow.css';
+import { useAuth } from "../../../context/AuthContext";
 
 interface SongRowProps {
   song: Song;
@@ -10,6 +11,14 @@ interface SongRowProps {
 export default function SongRow({
   song,
 }: SongRowProps) {
+
+  const auth = useAuth();
+     
+       if (!auth) {
+         return null;
+       }
+     
+  const { user } = auth;
 
   const {
     currentSong,
@@ -21,6 +30,8 @@ export default function SongRow({
 
   const isCurrent =
     currentSong?.id === song.id;
+
+    
 
 
   const handlePlay = () => {
@@ -66,7 +77,7 @@ export default function SongRow({
           <img
             src={
               song.coverImage
-                ? `http://localhost:5000/uploads/covers/${song.coverImage}`
+                ? `${song.coverImage}`
                 : "/default-cover.png"
             }
             alt=""
@@ -117,8 +128,7 @@ export default function SongRow({
         {new Date(
           song.createdAt
         ).toLocaleDateString("pt-PT")}
-      </td>
-
+      </td> 
     </tr>
   );
 }

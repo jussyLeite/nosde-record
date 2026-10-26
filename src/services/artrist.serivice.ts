@@ -39,6 +39,11 @@ interface ArtistResponse {
   data: Artist;
 }
 
+interface ArtistResponse2 {
+  success: boolean;
+  data: Artist[];
+}
+
 /**
  * Dados permitidos para atualização
  */
@@ -69,6 +74,31 @@ export async function getMyArtistProfile(): Promise<Artist> {
 
   return response.data.data;
 }
+
+
+export async function getAllArtist(): Promise<ArtistResponse2> {
+  const response = await api.get<ArtistResponse2>(
+    "/artists/all"
+  )
+  return response.data;
+}
+
+
+export interface UserDetail {
+  id: string;
+  name: string;
+  email: string;
+  role: string;
+  createdAt: string;
+}
+
+export const userService = {
+  getUserById: async (userId: string): Promise<UserDetail> => {
+    const response = await api.get(`/users/${userId}`);
+    // Ajusta conforme a estrutura do teu Node.js (ex: response.data ou response.data.data)
+    return response.data.data || response.data;
+  }
+};
 
 /**
  * =====================================================

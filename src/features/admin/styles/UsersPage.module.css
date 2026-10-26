@@ -1,0 +1,157 @@
+.container {
+  padding: 32px;
+  background-color: #121212;
+  min-height: 100vh;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 4px;
+}
+
+.countBadge {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.tableCard {
+  background-color: #181818;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tableHeader {
+  display: grid;
+  grid-template-columns: 50px 2fr 1fr 1fr;
+  padding: 14px 20px;
+  background: rgba(255, 255, 255, 0.02);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: 50px 2fr 1fr 1fr;
+  align-items: center;
+  padding: 14px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  transition: background 0.2s;
+}
+
+.tableRow:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.userInfoCell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.userInfoCell strong {
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+.userInfoCell span {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.roleBadge {
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.admin { background: rgba(30, 215, 96, 0.2); color: #1ed760; border: 1px solid #1ed760; }
+.artist { background: rgba(0, 150, 255, 0.2); color: #0096ff; border: 1px solid #0096ff; }
+.user { background: rgba(255, 255, 255, 0.1); color: #aaa; border: 1px solid #aaa; }
+
+.dateCell {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.emptyState {
+  padding: 48px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.loading, .error {
+  padding: 64px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.tableFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.01);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.paginationControls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pageButton {
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  color: #fff;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.pageButton:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.pageButton:not(:disabled):hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.pageIndicator {
+  font-weight: 500;
+  color: #fff;
+}

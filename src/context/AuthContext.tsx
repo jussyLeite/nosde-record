@@ -41,7 +41,7 @@ interface AuthContextType {
   // Login
   login: (
     credentials: LoginCredentials
-  ) => Promise<void>;
+  ) => Promise<AuthUser>;
 
   // Logout
   logout: () => void;
@@ -162,7 +162,7 @@ export function AuthProvider({
 
   const login = async (
     credentials: LoginCredentials
-  ): Promise<void> => {
+  ): Promise<AuthUser> => {
 
     const response: AuthResponse =
       await authService.login(credentials);
@@ -184,6 +184,7 @@ export function AuthProvider({
 
     }
 
+    console.log("response: ",response);
 
     const token = response.data.token;
 
@@ -226,6 +227,8 @@ export function AuthProvider({
       "Login realizado:",
       authenticatedUser
     );
+
+    return authenticatedUser;
 
   };
 
@@ -298,7 +301,6 @@ export function AuthProvider({
 export function useAuth(): AuthContextType {
 
   const context = useContext(AuthContext);
-
 
   if (!context) {
 

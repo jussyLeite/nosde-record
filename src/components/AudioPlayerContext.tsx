@@ -158,7 +158,8 @@ export function AudioPlayerProvider({
 
 
     const url =
-      `/songs/${song.audioFile}`;
+      `${song.audioFile}`;
+      
 
 
     /*

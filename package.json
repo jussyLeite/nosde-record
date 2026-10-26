@@ -17,6 +17,7 @@
     "axios": "^1.18.0",
     "firebase": "^12.12.0",
     "font-awesome": "^4.7.0",
+    "nodemailer": "^10.2.1",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "react-router-dom": "^7.18.2",

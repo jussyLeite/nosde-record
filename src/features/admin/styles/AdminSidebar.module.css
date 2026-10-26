@@ -1,0 +1,420 @@
+/* =========================================================
+   SIDEBAR ADMIN
+   ========================================================= */
+
+.sidebar {
+  position: fixed;
+
+  top: 8px;
+  left: 8px;
+  bottom: 8px;
+
+  width: 260px;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 16px 10px;
+
+  background: var(--nosde-sidebar);
+
+  border-radius: 8px;
+
+  overflow-y: auto;
+
+  z-index: 1000;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.logoArea {
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  padding: 7px 12px 20px;
+}
+
+
+.logo {
+  width: 38px;
+  height: 38px;
+
+  object-fit: contain;
+
+  flex-shrink: 0;
+}
+
+
+.logoText {
+  color: var(--nosde-text);
+
+  font-size: 17px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.3px;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   NAVEGAÇÃO
+   ========================================================= */
+
+.navigation {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+
+/* =========================================================
+   SECÇÃO
+   ========================================================= */
+
+.menuSection {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+
+  margin-bottom: 13px;
+}
+
+
+/* =========================================================
+   TÍTULO DA SECÇÃO
+   ========================================================= */
+
+.sectionTitle {
+  padding: 0 13px;
+
+  margin: 4px 0 5px;
+
+  color: var(--nosde-text-muted);
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   ITEM DO MENU
+   ========================================================= */
+
+.menuItem {
+  position: relative;
+
+  width: 100%;
+  min-height: 40px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 0 13px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: transparent;
+
+  color: var(--nosde-text-secondary);
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  text-decoration: none;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+
+.menuItem:hover {
+  background: var(--nosde-card-hover);
+
+  color: var(--nosde-text);
+}
+
+
+.menuItemActive {
+  background: var(--nosde-red);
+
+  color: var(--nosde-text);
+
+  font-weight: 600;
+}
+
+
+.menuItemActive:hover {
+  background: var(--nosde-red-hover);
+
+  color: var(--nosde-text);
+}
+
+
+/* =========================================================
+   ÍCONE
+   ========================================================= */
+
+.menuIcon {
+  width: 22px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  color: inherit;
+
+  font-size: 15px;
+}
+
+
+.menuLabel {
+  flex: 1;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   BADGE
+   ========================================================= */
+
+.badge {
+  min-width: 19px;
+  height: 19px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 5px;
+
+  border-radius: 10px;
+
+  background: var(--nosde-red-light);
+
+  color: #fff;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   ESPAÇADOR
+   ========================================================= */
+
+.spacer {
+  flex: 1;
+}
+
+
+/* =========================================================
+   PARTE INFERIOR
+   ========================================================= */
+
+.bottomSection {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+
+/* =========================================================
+   DIVISOR
+   ========================================================= */
+
+.divider {
+  height: 1px;
+
+  margin: 10px 8px 12px;
+
+  background: var(--nosde-border);
+}
+
+
+/* =========================================================
+   LOGOUT
+   ========================================================= */
+
+.logoutButton {
+  color: var(--nosde-text-secondary);
+}
+
+
+.logoutButton:hover {
+  background: rgba(226, 33, 52, 0.12);
+
+  color: var(--nosde-error);
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+.sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+
+
+.sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #333;
+
+  border-radius: 10px;
+}
+
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: #444;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .sidebar {
+    width: 225px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .sidebar {
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    width: 72px;
+
+    padding: 12px 8px;
+
+    border-radius: 0;
+  }
+
+
+  .logoArea {
+    justify-content: center;
+
+    padding: 8px 0 20px;
+  }
+
+
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+
+
+  .logoText {
+    display: none;
+  }
+
+
+  .sectionTitle {
+    display: none;
+  }
+
+
+  .menuSection {
+    margin-bottom: 8px;
+  }
+
+
+  .menuItem {
+    justify-content: center;
+
+    padding: 0;
+  }
+
+
+  .menuIcon {
+    font-size: 17px;
+  }
+
+
+  .menuLabel {
+    display: none;
+  }
+
+
+  .badge {
+    position: absolute;
+
+    top: 2px;
+    right: 2px;
+
+    min-width: 16px;
+    height: 16px;
+
+    padding: 0 4px;
+
+    font-size: 9px;
+  }
+
+
+  .divider {
+    margin: 10px 4px;
+  }
+
+}

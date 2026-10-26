@@ -1,0 +1,478 @@
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.upload-song-overlay {
+  position: fixed;
+  inset: 0;
+
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background: rgba(0, 0, 0, 0.8);
+
+  backdrop-filter: blur(4px);
+
+  animation: uploadFadeIn 0.18s ease;
+}
+
+
+/* =========================================================
+   DIALOG
+========================================================= */
+
+.upload-song-dialog {
+  width: 100%;
+  max-width: 680px;
+
+  max-height: calc(100vh - 48px);
+
+  display: flex;
+  flex-direction: column;
+
+  background: var(--nosde-dark-gray);
+
+  border: 1px solid var(--nosde-border);
+
+  border-radius: 14px;
+
+  box-shadow: var(--nosde-shadow);
+
+  overflow: hidden;
+
+  animation: uploadSlideIn 0.2s ease;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.upload-song-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  padding: 24px 26px;
+
+  background: var(--nosde-card);
+
+  border-bottom: 1px solid var(--nosde-border);
+}
+
+.upload-song-header h2 {
+  margin: 0;
+
+  font-size: 21px;
+  font-weight: 700;
+
+  color: var(--nosde-text);
+}
+
+.upload-song-header p {
+  margin: 6px 0 0;
+
+  font-size: 13px;
+
+  color: var(--nosde-text-secondary);
+}
+
+
+/* =========================================================
+   CLOSE
+========================================================= */
+
+.upload-song-close {
+  width: 36px;
+  height: 36px;
+
+  border: 0;
+  border-radius: 8px;
+
+  background: transparent;
+
+  color: var(--nosde-text-secondary);
+
+  font-size: 26px;
+
+  cursor: pointer;
+}
+
+.upload-song-close:hover {
+  background: var(--nosde-card-hover);
+
+  color: var(--nosde-text);
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.upload-song-form {
+  overflow-y: auto;
+
+  padding: 26px;
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.upload-song-section {
+  margin-bottom: 28px;
+}
+
+.upload-song-section-title {
+  margin-bottom: 20px;
+}
+
+.upload-song-section-title h3 {
+  margin: 0;
+
+  color: var(--nosde-text);
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.upload-song-section-title p {
+  margin: 5px 0 0;
+
+  color: var(--nosde-text-muted);
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   FIELD
+========================================================= */
+
+.upload-song-field {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 18px;
+}
+
+.upload-song-field label,
+.upload-file-group > label {
+  margin-bottom: 8px;
+
+  color: var(--nosde-text-secondary);
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.upload-song-field input,
+.upload-song-field select,
+.upload-song-field textarea {
+  width: 100%;
+
+  border: 1px solid var(--nosde-border);
+
+  border-radius: 8px;
+
+  background: var(--nosde-card);
+
+  color: var(--nosde-text);
+
+  outline: none;
+
+  font-size: 14px;
+
+  transition: 0.2s ease;
+}
+
+.upload-song-field input,
+.upload-song-field select {
+  height: 44px;
+
+  padding: 0 13px;
+}
+
+.upload-song-field textarea {
+  padding: 12px 13px;
+
+  resize: vertical;
+}
+
+.upload-song-field input:focus,
+.upload-song-field select:focus,
+.upload-song-field textarea:focus {
+  border-color: var(--nosde-red-light);
+
+  box-shadow:
+    0 0 0 2px var(--nosde-red-soft);
+}
+
+.upload-song-field input::placeholder,
+.upload-song-field textarea::placeholder {
+  color: var(--nosde-text-muted);
+}
+
+
+/* =========================================================
+   FILE
+========================================================= */
+
+.upload-file-group {
+  margin-bottom: 18px;
+}
+
+.upload-file-box {
+  min-height: 70px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 12px 14px;
+
+  background: var(--nosde-card);
+
+  border: 1px dashed var(--nosde-border-light);
+
+  border-radius: 9px;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.upload-file-box:hover {
+  border-color: var(--nosde-red-light);
+
+  background: var(--nosde-card-hover);
+}
+
+.upload-file-icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--nosde-red-soft);
+
+  color: var(--nosde-red-light);
+
+  font-size: 20px;
+}
+
+.upload-file-content {
+  flex: 1;
+
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.upload-file-content strong {
+  overflow: hidden;
+
+  color: var(--nosde-text);
+
+  font-size: 13px;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+.upload-file-content small {
+  color: var(--nosde-text-muted);
+
+  font-size: 11px;
+}
+
+.upload-file-button {
+  padding: 8px 13px;
+
+  border: 1px solid var(--nosde-border-light);
+
+  border-radius: 6px;
+
+  color: var(--nosde-text-secondary);
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.upload-song-error {
+  margin-bottom: 18px;
+
+  padding: 12px 14px;
+
+  border: 1px solid rgba(226, 33, 52, 0.3);
+
+  border-radius: 8px;
+
+  background: rgba(226, 33, 52, 0.1);
+
+  color: var(--nosde-error);
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.upload-song-footer {
+  display: flex;
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  margin: 0 -26px -26px;
+
+  padding: 18px 26px;
+
+  background: var(--nosde-card);
+
+  border-top: 1px solid var(--nosde-border);
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.upload-btn {
+  height: 42px;
+
+  padding: 0 18px;
+
+  border-radius: 7px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.upload-btn-secondary {
+  border: 1px solid var(--nosde-border-light);
+
+  background: transparent;
+
+  color: var(--nosde-text-secondary);
+}
+
+.upload-btn-secondary:hover {
+  background: var(--nosde-card-hover);
+
+  color: var(--nosde-text);
+}
+
+.upload-btn-primary {
+  border: 1px solid var(--nosde-red);
+
+  background: var(--nosde-red);
+
+  color: white;
+}
+
+.upload-btn-primary:hover {
+  background: var(--nosde-red-hover);
+
+  border-color: var(--nosde-red-hover);
+}
+
+.upload-btn:disabled {
+  opacity: 0.5;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   ANIMATION
+========================================================= */
+
+@keyframes uploadFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes uploadSlideIn {
+  from {
+    opacity: 0;
+
+    transform: translateY(12px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .upload-song-overlay {
+    padding: 10px;
+
+    align-items: flex-end;
+  }
+
+  .upload-song-dialog {
+    max-height: 94vh;
+
+    border-radius: 14px 14px 0 0;
+  }
+
+  .upload-song-header {
+    padding: 20px;
+  }
+
+  .upload-song-form {
+    padding: 20px;
+  }
+
+  .upload-song-footer {
+    margin: 0 -20px -20px;
+
+    padding: 16px 20px;
+  }
+
+  .upload-btn {
+    flex: 1;
+  }
+
+}

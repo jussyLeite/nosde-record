@@ -1,0 +1,492 @@
+/* =========================================================
+   DASHBOARD ADMIN
+   ========================================================= */
+
+.dashboard {
+  width: 100%;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.pageHeader {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 28px;
+}
+
+
+.pageTitle {
+  margin: 0;
+
+  color: var(--nosde-text);
+
+  font-size: 28px;
+
+  font-weight: 700;
+}
+
+
+.pageSubtitle {
+  margin: 6px 0 0;
+
+  color: var(--nosde-text-secondary);
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   ESTATÍSTICAS
+   ========================================================= */
+
+.statsGrid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 15px;
+
+  margin-bottom: 20px;
+}
+
+
+.statCard {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  min-height: 105px;
+
+  padding: 18px;
+
+  background: var(--nosde-card);
+
+  border: 1px solid var(--nosde-border);
+
+  border-radius: 10px;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.statCard:hover {
+  background: var(--nosde-card-hover);
+
+  transform: translateY(-2px);
+}
+
+
+.statIcon {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--nosde-red-soft);
+
+  color: var(--nosde-red-light);
+
+  font-size: 16px;
+}
+
+
+.statContent {
+  min-width: 0;
+}
+
+
+.statLabel {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: var(--nosde-text-muted);
+
+  font-size: 12px;
+}
+
+
+.statValue {
+  display: block;
+
+  color: var(--nosde-text);
+
+  font-size: 24px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   GRID DE VISÃO GERAL
+   ========================================================= */
+
+.overviewGrid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.5fr)
+    minmax(280px, 1fr);
+
+  gap: 16px;
+
+  margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   PAINEL
+   ========================================================= */
+
+.panel,
+.recentSection {
+  background: var(--nosde-card);
+
+  border: 1px solid var(--nosde-border);
+
+  border-radius: 10px;
+}
+
+
+.panel {
+  padding: 22px;
+}
+
+
+.recentSection {
+  padding: 22px;
+}
+
+
+/* =========================================================
+   CABEÇALHO DO PAINEL
+   ========================================================= */
+
+.panelHeader {
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: space-between;
+
+  margin-bottom: 20px;
+}
+
+
+.panelTitle {
+  margin: 0;
+
+  color: var(--nosde-text);
+
+  font-size: 17px;
+
+  font-weight: 700;
+}
+
+
+.panelSubtitle {
+  margin: 5px 0 0;
+
+  color: var(--nosde-text-secondary);
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   ATIVIDADE
+   ========================================================= */
+
+.activityList {
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+.activityItem {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 14px 0;
+
+  border-bottom: 1px solid var(--nosde-border);
+}
+
+
+.activityItem:first-child {
+  padding-top: 0;
+}
+
+
+.activityItem:last-child {
+  padding-bottom: 0;
+
+  border-bottom: none;
+}
+
+
+.activityIcon {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  background: var(--nosde-dark-gray);
+
+  color: var(--nosde-red-light);
+
+  font-size: 14px;
+}
+
+
+.activityInfo {
+  flex: 1;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+
+.activityInfo span {
+  color: var(--nosde-text-secondary);
+
+  font-size: 13px;
+}
+
+
+.activityInfo strong {
+  color: var(--nosde-text);
+
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   SUBMISSÕES PENDENTES
+   ========================================================= */
+
+.pendingContent {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 150px;
+
+  text-align: center;
+}
+
+
+.pendingNumber {
+  color: var(--nosde-text);
+
+  font-size: 36px;
+
+  font-weight: 700;
+}
+
+
+.pendingContent p {
+  margin: 5px 0 18px;
+
+  color: var(--nosde-text-muted);
+
+  font-size: 12px;
+}
+
+
+.primaryButton {
+  padding: 9px 16px;
+
+  border: none;
+
+  border-radius: 6px;
+
+  background: var(--nosde-red);
+
+  color: var(--nosde-text);
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease;
+}
+
+
+.primaryButton:hover {
+  background: var(--nosde-red-hover);
+}
+
+
+/* =========================================================
+   CONTEÚDO RECENTE
+   ========================================================= */
+
+.recentSection {
+  min-height: 280px;
+}
+
+
+/* =========================================================
+   ESTADO VAZIO
+   ========================================================= */
+
+.emptyState {
+  min-height: 190px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 25px;
+
+  border: 1px dashed var(--nosde-border-light);
+
+  border-radius: 8px;
+
+  text-align: center;
+}
+
+
+.emptyIcon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 12px;
+
+  border-radius: 50%;
+
+  background: var(--nosde-red-soft);
+
+  color: var(--nosde-red-light);
+
+  font-size: 18px;
+}
+
+
+.emptyState h3 {
+  margin: 0;
+
+  color: var(--nosde-text);
+
+  font-size: 15px;
+}
+
+
+.emptyState p {
+  max-width: 400px;
+
+  margin: 7px 0 0;
+
+  color: var(--nosde-text-muted);
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .statsGrid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+
+  .overviewGrid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .pageTitle {
+    font-size: 24px;
+  }
+
+
+  .statsGrid {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+
+  .statCard {
+    min-height: 90px;
+  }
+
+
+  .panel,
+  .recentSection {
+    padding: 17px;
+  }
+
+
+  .activityInfo {
+    align-items: flex-end;
+
+    flex-direction: column;
+
+    gap: 2px;
+  }
+
+}
