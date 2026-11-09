@@ -14,18 +14,5 @@ export default function App() {
 
   return  <AppRoutes/>
     
-      {/*<div className="app-container"> jjkjkj
-      {view === "dashboard" ? (
-        <DashboardPage onNavigateToLogin={handleNavigateToLogin} />
-      ) : (
-        <AuthProvider><LoginPage onBackToDashboard={handleNavigateToDashboard} /></AuthProvider>
-        
-      )}
-    </div> */} 
-    
-   
-
-    
-    
   
 }

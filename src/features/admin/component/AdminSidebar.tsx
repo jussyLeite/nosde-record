@@ -83,6 +83,13 @@ export default function AdminSidebar() {
           path: "/admin/submission",
         },
 
+         {
+          label: "Demos",
+          icon: "fa-star",
+          path: "/admin/demos",
+        },
+
+
         {
           label: "Playlists",
           icon: "fa-list",

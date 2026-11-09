@@ -22,6 +22,7 @@ import Artist from "../features/admin/pages/Artists.";
 import SubmissionsPage from "../features/admin/pages/Submissions";
 import SongReviewPage from "../features/admin/pages/SongReviewPage";
 import UsersPage from "../features/admin/pages/UsersPage";
+import DemoPage from "../features/admin/pages/demo";
 
 export default function AppRoutes() {
   return (
@@ -71,6 +72,11 @@ export default function AppRoutes() {
               path="artists"
               element={ <Artist /> }
           />
+
+          <Route 
+           path="demos"
+           element={ <DemoPage />}
+           />
 
           <Route
            path="submission"

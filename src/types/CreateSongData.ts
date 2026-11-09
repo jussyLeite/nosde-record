@@ -1,8 +1,11 @@
 export interface CreateSongData {
-  title: string;
-  genre: string;
-  description?: string;
-
-  cover: File;
-  audio: File;
+  id: string;
+  nomeArtistico: string;
+  email: string;
+  audioUrl: string;
+  mensagem: String;
+  status: String;
+  createdAt: String;
+  updatedAt: String;
+  obs: String;
 }

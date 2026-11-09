@@ -18,9 +18,6 @@ export default function SongPlayButton({
 
   const togglePlay = async () => {
 
-    console.log("audioUrl");
-    console.log(audioUrl);
-
     if (!audioRef.current) {
       return;
     }

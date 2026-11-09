@@ -1,4 +1,5 @@
 // src/services/demoService.ts
+import type { Demo, DemosApiResponse } from "../types/Demo";
 import { api } from "./api";
 
 // Interface que define o que o backend espera receber
@@ -20,7 +21,7 @@ export const demoService = {
     formData.append("file", data.audioFile); // O nome "file" deve coincidir com o @RequestParam do Spring Boot
 
     // Envia a requisição POST com o Content-Type correto para Multipart
-    const response = await api.post("/demos/enviar", formData, {
+    const response = await api.post("/demo/send", formData, {
       headers: {
         "Content-Type": "multipart/form-data",
       },
@@ -29,3 +30,16 @@ export const demoService = {
     return response.data;
   },
 };
+
+/*export async function getAllDemos(): Promise<Demo[]> {
+  const response = await api.get<DemosApiResponse>("/demo/all");
+  
+  // response.data é o objeto JSON global; o .data interno contém o array de Demo[]
+  return response.data.data;
+} */
+
+export async function getAllDemos(page = 1, limit = 10): Promise<DemosApiResponse> {
+  const response = await api.get<DemosApiResponse>(`/demo/all?page=${page}&limit=${limit}`);
+  
+  return response.data;
+}

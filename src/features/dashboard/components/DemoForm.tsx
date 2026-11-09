@@ -4,7 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCloudUploadAlt, faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faInstagram, faFacebookF, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import styles from "./DemoForm.module.css";
-import { demoService } from "../../../services/demoService";
+import { demoService } from "../../../services/demo.service";
+import { toast } from "react-toastify";
 
 export default function DemoForm() {
   // Estados para controlar o formulário (Boas práticas React)
@@ -32,6 +33,8 @@ export default function DemoForm() {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
+
+    console.log("Sending demo");
     e.preventDefault();
     
     if (!selectedFile) {
@@ -43,23 +46,31 @@ export default function DemoForm() {
     setFeedbackMsg(null);
 
     try {
-      await demoService.enviarDemo({
+    const response =  await demoService.enviarDemo({
         nomeArtistico,
         email,
         mensagem,
         audioFile: selectedFile,
       });
 
-      setFeedbackMsg({ type: "success", text: "Demo enviada com sucesso para a Nosde Record!" });
+
+    toast.success(
+          response.message
+    );
       
       // Limpar o formulário após o sucesso
       setNomeArtistico("");
       setEmail("");
       setMensagem("");
       setSelectedFile(null);
+
+      
     } catch (error) {
       console.error("Erro ao enviar a demo:", error);
-      setFeedbackMsg({ type: "error", text: "Falha ao enviar a demo. Tente novamente mais tarde." });
+    
+       toast.error(
+          "Falha ao enviar a demo. Tente novamente mais tarde."
+    );
     } finally {
       setIsLoading(false);
     }
@@ -126,7 +137,7 @@ export default function DemoForm() {
             </div>
 
             <button type="submit" className={styles.submitBtn}>
-              Enviar Demo
+              { isLoading  ? 'Enviando...': 'Enviar Demo' }
             </button>
           </form>
         </div>
